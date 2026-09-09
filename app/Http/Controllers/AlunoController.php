@@ -8,33 +8,48 @@ use App\Models\Aluno;
 class AlunoController extends Controller
 {
     public function index() {
+        
         // $alunos = ['Ana', 'Bruno', 'Carla'];
         $alunos = Aluno::all();
         return view('alunos.index', ['alunos' => $alunos]);
     }
 
     public function show($id) {
-        return view('alunos.show', ['id' => $id]);
+        $aluno = Aluno::find($id);
+        return view('alunos.show', ['aluno' => $aluno]);
     }
 
     public function create() {
         return view('alunos.create');
     }
 
-    public function store() {
+    public function store(Request $request) {
+        Aluno::create([
+            'nome' => $request->nome,
+            'curso' => $request->curso,
+        ]);
 
+        return redirect('/alunos');
     }
 
-    public function edit() {
-        return view('alunos.edit');
+    public function edit($id) {
+        $aluno = Aluno::find($id);
+        return view('alunos.edit', ['aluno' => $aluno]);
     }
 
-    public function update() {
+    public function update(Request $request, $id) {
+        $aluno = Aluno::find($id);
+        $aluno->update([
+            'nome' => $request->nome,
+            'curso' => $request->curso,
+        ]);
 
+        return redirect('/alunos');
     }
 
-    public function destroy() {
-
+    public function destroy($id) {
+        Aluno::destroy($id);
+        return redirect('/alunos');
     }
 
 // ------ ATIVIDADE 11 ------
