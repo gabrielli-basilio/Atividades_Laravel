@@ -48,6 +48,11 @@ Route::get('/alunos/create', [
     AlunoController::class, 'create'
 ]);
 
+// Rota para consultas específicas de alunos
+Route::get('/alunos/consultas', [
+    AlunoController::class, 'consultas'
+]);
+
 Route::get('/alunos/{id}', [
     AlunoController::class, 'show'
 ]);

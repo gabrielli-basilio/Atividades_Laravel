@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aluno;
 
 class AlunoController extends Controller
 {
@@ -33,5 +34,28 @@ class AlunoController extends Controller
 
     public function destroy() {
 
+    }
+
+// ------ ATIVIDADE 11 ------
+
+    public function consultas() {
+        // Alunos de um determinado curso
+        $porCurso = Aluno::where('curso', 'Engenharia')->get();
+
+        // Alunos cujo nome contém determinada palavra
+        $porNome = Aluno::where('nome', 'like', '%Ana%')->get();
+
+        // Alunos cadastrados recentemente
+        $recentes = Aluno::where('created_at', '>=', now()->subDays(7))->get();
+
+        // Quantidade de alunos
+        $total = Aluno::count();
+
+        return view('alunos.consultas', [
+            'porCurso' => $porCurso,
+            'porNome' => $porNome,
+            'recentes' => $recentes,
+            'total' => $total,
+        ]);
     }
 }

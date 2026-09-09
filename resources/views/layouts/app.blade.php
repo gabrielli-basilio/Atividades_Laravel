@@ -50,6 +50,13 @@
             margin-top: 0;
         }
 
+        h2 {
+            color: #000000;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
         ul {
             padding-left: 20px;
         }
