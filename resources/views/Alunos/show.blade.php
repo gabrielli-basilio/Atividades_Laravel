@@ -4,4 +4,5 @@
 
 @section('content')
     <h1>Detalhes do Aluno</h1>
+    <p>Aluno número: {{ $id ?? '' }}</p>
 @endsection

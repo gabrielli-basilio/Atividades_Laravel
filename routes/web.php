@@ -7,16 +7,24 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/sobre', function () {
+/* Route::get('/sobre', function () {
     return 'Pagina de informações';
 });
 
-/*Route::get('/alunos', function () {
+Route::get('/alunos', function () {
     return 'Pagina de Alunos';
-}); */
+});
 
 Route::get('/contato', function () {
     return 'Pagina de Contato';
+}); */
+
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+
+Route::get('/contato', function () {
+    return view('contato');
 });
 
 Route::get('/produto/{id}', function ($id) {

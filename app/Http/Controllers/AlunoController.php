@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 class AlunoController extends Controller
 {
     public function index() {
-        return view('alunos.index');
+        $alunos = ['Ana', 'Bruno', 'Carla'];
+        return view('alunos.index', ['alunos' => $alunos]);
     }
 
-    public function show(){
-        return view('alunos.show');
+    public function show($id) {
+        return view('alunos.show', ['id' => $id]);
     }
 
     public function create() {
@@ -19,7 +20,7 @@ class AlunoController extends Controller
     }
 
     public function store() {
-        
+
     }
 
     public function edit() {
