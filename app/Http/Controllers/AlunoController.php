@@ -8,7 +8,8 @@ use App\Models\Aluno;
 class AlunoController extends Controller
 {
     public function index() {
-        $alunos = ['Ana', 'Bruno', 'Carla'];
+        // $alunos = ['Ana', 'Bruno', 'Carla'];
+        $alunos = Aluno::all();
         return view('alunos.index', ['alunos' => $alunos]);
     }
 
@@ -40,7 +41,7 @@ class AlunoController extends Controller
 
     public function consultas() {
         // Alunos de um determinado curso
-        $porCurso = Aluno::where('curso', 'Engenharia')->get();
+        $porCurso = Aluno::where('curso', 'Engenharia de Software')->get();
 
         // Alunos cujo nome contém determinada palavra
         $porNome = Aluno::where('nome', 'like', '%Ana%')->get();

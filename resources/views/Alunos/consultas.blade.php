@@ -7,7 +7,7 @@
 
     <h2>Total de alunos: {{ $total }}</h2>
 
-    <h2>Alunos de Engenharia</h2>
+    <h2>Alunos de Engenharia de Software</h2>
     @if(count($porCurso) > 0)
         <ul>
             @foreach($porCurso as $aluno)

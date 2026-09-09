@@ -12,7 +12,7 @@
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             background-color: #f3eefc;
-            color: #333;
+            color: #000000;
         }
 
         nav {

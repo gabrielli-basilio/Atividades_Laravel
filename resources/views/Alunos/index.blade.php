@@ -5,10 +5,10 @@
 @section('content')
     <h1>Lista de Alunos</h1>
 
-    @if(count($alunos ?? []) > 0)
+    @if(count($alunos) > 0)
         <ul>
             @foreach($alunos as $aluno)
-                <li>{{ $aluno }}</li>
+                <li>{{ $aluno->nome }} - {{ $aluno->curso }}</li>
             @endforeach
         </ul>
     @else
