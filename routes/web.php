@@ -18,3 +18,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin', function () {
+    return 'Página do Admin';
+})->middleware('role:admin');
