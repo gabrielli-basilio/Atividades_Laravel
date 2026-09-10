@@ -5,6 +5,8 @@
 @section('content')
     <h1>Lista de Alunos</h1>
 
+    <a href="/alunos/create" class="btn-criar">+ Criar Aluno</a>
+
     @if(count($alunos) > 0)
         <ul>
             @foreach($alunos as $aluno)

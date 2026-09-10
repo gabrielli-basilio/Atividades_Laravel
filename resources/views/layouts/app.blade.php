@@ -72,6 +72,56 @@
             padding: 20px;
             display: inline-block;
         }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        form label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #5b21b6;
+        }
+
+        form input {
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        form button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #5b21b6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #7c3aed;
+        }
+
+        .btn-criar {
+            display: inline-block;
+            background-color: #5b21b6;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn-criar:hover {
+            background-color: #7c3aed;
+        }
     </style>
 </head>
 <body>
