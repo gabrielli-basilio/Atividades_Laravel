@@ -5,7 +5,9 @@
 @section('content')
     <h1>Lista de Alunos</h1>
 
-    <a href="/alunos/create" class="btn-criar">+ Criar Aluno</a>
+    @can('create', App\Models\Aluno::class)
+        <a href="/alunos/create" class="btn-criar">+ Criar Aluno</a>
+    @endcan
 
     @if(count($alunos) > 0)
         <ul>
