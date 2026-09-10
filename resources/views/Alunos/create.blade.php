@@ -5,6 +5,14 @@
 @section('content')
     <h1>Criar Aluno</h1>
 
+    @if ($errors->any())
+        <ul class="erros">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <form action="/alunos" method="POST">
         @csrf
 

@@ -18,4 +18,11 @@ class AlunoRequest extends FormRequest
             'curso' => 'required',
         ];
     }
+
+    public function messages(): array {
+        return [
+            'nome.required' => 'O campo nome é obrigatório.',
+            'curso.required' => 'O campo curso é obrigatório.',
+        ];
+    }
 }
