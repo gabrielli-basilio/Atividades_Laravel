@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Aluno;
 use App\Http\Requests\AlunoRequest;
+use App\Models\Curso;
 
 class AlunoController extends Controller
 {
@@ -21,13 +22,16 @@ class AlunoController extends Controller
     }
 
     public function create() {
-        return view('alunos.create');
-    }
+        $cursos = Curso::all();
+        return view('alunos.create', ['cursos' => $cursos]);
+}
 
     public function store(AlunoRequest $request) {
+        $curso = Curso::find($request->curso_id);
         Aluno::create([
             'nome' => $request->nome,
-            'curso' => $request->curso,
+            'curso' => $curso->nome,
+            'curso_id' => $request->curso_id,
         ]);
 
         return redirect('/alunos');
@@ -35,7 +39,8 @@ class AlunoController extends Controller
 
     public function edit($id) {
         $aluno = Aluno::find($id);
-        return view('alunos.edit', ['aluno' => $aluno]);
+        $cursos = Curso::all();
+        return view('alunos.edit', ['aluno' => $aluno, 'cursos' => $cursos]);
     }
 
     public function update(Request $request, $id) {
@@ -74,5 +79,9 @@ class AlunoController extends Controller
             'recentes' => $recentes,
             'total' => $total,
         ]);
+    }
+    public function listaCursos() {
+        $cursos = Curso::all();
+        return view('cursos.index', ['cursos' => $cursos]);
     }
 }

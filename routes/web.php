@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\CursoController;
 
 Route::get('/', function () {
     return view('home');
@@ -71,4 +72,14 @@ Route::put('/alunos/{id}', [
 
 Route::delete('/alunos/{id}', [
     AlunoController::class, 'destroy'
+]);
+
+// Rota para exibir os alunos matriculados em um curso específico
+Route::get('/cursos/{id}/alunos', 
+    [CursoController::class, 'alunosPorCurso'
+]);
+
+// Rota que exibe os cursos
+Route::get('/cursos', [
+    CursoController::class, 'listaCursos'
 ]);

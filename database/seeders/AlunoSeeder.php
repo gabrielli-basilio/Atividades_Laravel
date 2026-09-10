@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Aluno;
+use App\Models\Curso;
 
 class AlunoSeeder extends Seeder
 {
@@ -22,8 +23,14 @@ class AlunoSeeder extends Seeder
             ['nome' => 'João Pereira', 'curso' => 'Direito'],
         ];
 
-        foreach ($alunos as $aluno) {
-            Aluno::create($aluno);
+        foreach ($alunos as $dado) {
+            $curso = Curso::where('nome', $dado['curso'])->first();
+
+            Aluno::create([
+                'nome' => $dado['nome'],
+                'curso' => $dado['curso'],
+                'curso_id' => $curso->id,
+            ]);
         }
     }
 }

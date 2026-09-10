@@ -11,18 +11,20 @@ class AlunoRequest extends FormRequest
         return true;
     }
 
-    public function rules(): array
-    {
+   public function rules(): array
+   {
         return [
-            'nome' => 'required',
-            'curso' => 'required',
+            'nome' => 'required|min:3',
+            'curso_id' => 'required|exists:cursos,id',
         ];
     }
 
-    public function messages(): array {
+    public function messages(): array
+    {
         return [
             'nome.required' => 'O campo nome é obrigatório.',
-            'curso.required' => 'O campo curso é obrigatório.',
+            'curso_id.required' => 'Selecione um curso.',
+            'curso_id.exists' => 'O curso selecionado não existe.',
         ];
     }
 }

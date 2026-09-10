@@ -20,7 +20,12 @@
         <input type="text" name="nome" value="{{ old('nome') }}">
 
         <label>Curso:</label>
-        <input type="text" name="curso" value="{{ old('curso') }}">
+        <select name="curso_id">
+            <option value="">Selecione um curso</option>
+            @foreach($cursos as $curso)
+                <option value="{{ $curso->id }}">{{ $curso->nome }}</option>
+            @endforeach
+        </select>
 
         <button type="submit">Salvar</button>
     </form>
