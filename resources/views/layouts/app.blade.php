@@ -122,6 +122,15 @@
         .btn-criar:hover {
             background-color: #7c3aed;
         }
+
+        .erros {
+            color: #b91c1c;
+            background-color: #fee2e2;
+            padding: 10px 20px;
+            border-radius: 6px;
+            max-width: 300px;
+        }
+
     </style>
 </head>
 <body>
