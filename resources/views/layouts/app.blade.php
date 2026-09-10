@@ -45,6 +45,15 @@
             padding: 30px;
         }
 
+        main a {
+            color: #5b21b6;
+            text-decoration: none;
+        }
+
+        main a:hover {
+            text-decoration: underline;
+        }
+
         h1 {
             color: #5b21b6;
             margin-top: 0;
@@ -131,6 +140,13 @@
             max-width: 300px;
         }
 
+        form select {
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+        }
     </style>
 </head>
 <body>
